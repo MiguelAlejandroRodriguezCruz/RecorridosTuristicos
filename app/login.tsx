@@ -33,9 +33,21 @@ export default function LoginScreen() {
         onChangeText={setContrasena}
         secureTextEntry
       />
+
+      <Pressable onPress={() => router.push('/recuperacion')}>
+        <Text style={styles.link}>¿Olvidaste tu contraseña?</Text>
+      </Pressable>
+
       <Pressable style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Ingresar</Text>
       </Pressable>
+
+      <View style={styles.registerContainer}>
+        <Text style={styles.registerText}>¿No tienes cuenta? </Text>
+        <Pressable onPress={() => router.push('/registro')}>
+          <Text style={styles.registerLink}>Crea una</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -45,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 20,
-    backgroundColor: Colors.light.background, // Rosa pálido
+    backgroundColor: Colors.palette.azulMedio,
   },
   title: {
     fontSize: 24,
@@ -55,15 +67,21 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: Colors.palette.azulMedio,
+    borderColor: Colors.palette.rosaClaro,
     backgroundColor: '#fff',
     padding: 12,
     borderRadius: 8,
     marginBottom: 16,
     color: Colors.light.text,
   },
+  link: {
+    color: '#fff',
+    marginBottom: 16,
+    textAlign: 'right',
+    textDecorationLine: 'underline',
+  },
   button: {
-    backgroundColor: Colors.palette.azulMedio,
+    backgroundColor: Colors.palette.azulClaro,
     padding: 14,
     borderRadius: 8,
     alignItems: 'center',
@@ -71,5 +89,18 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+  registerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+  registerText: {
+    color: '#fff',
+  },
+  registerLink: {
+    color: '#fff',
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
