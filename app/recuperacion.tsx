@@ -1,3 +1,4 @@
+import { ThemedText } from '@/components/ThemedText';
 import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -12,7 +13,7 @@ export default function RecuperacionScreen() {
         <Pressable onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="#fff" />
         </Pressable>
-        <Text style={styles.headerTitle}>Recuperación de contraseña</Text>
+        <ThemedText type="title">Recuperación de contraseña</ThemedText>
       </View>
 
       <Text style={styles.instructions}>
@@ -43,11 +44,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     marginBottom: 30,
-  },
-  headerTitle: {
-    fontSize: 20,
-    color: '#fff',
-    fontWeight: 'bold',
   },
   instructions: {
     fontSize: 16,

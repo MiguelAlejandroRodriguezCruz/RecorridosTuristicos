@@ -1,3 +1,4 @@
+import { ThemedText } from '@/components/ThemedText';
 import { Colors } from '@/constants/Colors';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
@@ -18,7 +19,7 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Iniciar sesión</Text>
+      <ThemedText type="title">Iniciar sesión</ThemedText>
       <TextInput
         style={styles.input}
         placeholder="Usuario"
@@ -58,12 +59,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     backgroundColor: Colors.palette.azulMedio,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 24,
-    textAlign: 'center',
-    color: Colors.light.text,
   },
   input: {
     borderWidth: 1,

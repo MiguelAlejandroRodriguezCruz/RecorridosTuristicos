@@ -1,3 +1,4 @@
+import { ThemedText } from '@/components/ThemedText';
 import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -12,7 +13,7 @@ export default function RegistroScreen() {
         <Pressable onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="#fff" />
         </Pressable>
-        <Text style={styles.headerTitle}>Registro</Text>
+        <ThemedText type="title">Registro</ThemedText>
       </View>
 
       <TextInput style={styles.input} placeholder="Nombre completo" placeholderTextColor="#999" />
@@ -39,11 +40,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     marginBottom: 30,
-  },
-  headerTitle: {
-    fontSize: 20,
-    color: '#fff',
-    fontWeight: 'bold',
   },
   input: {
     backgroundColor: '#fff',
