@@ -1,14 +1,15 @@
+import { ThemedContainer } from '@/components/ThemedContainer';
+import { ThemedInput } from '@/components/ThemedInput';
 import { ThemedText } from '@/components/ThemedText';
 import { Colors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
-
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 export default function RecuperacionScreen() {
   const router = useRouter();
 
   return (
-    <View style={styles.container}>
+    <ThemedContainer type='containerRecuperacion'>
       <View style={styles.header}>
         <Pressable onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="#fff" />
@@ -19,8 +20,8 @@ export default function RecuperacionScreen() {
       <Text style={styles.instructions}>
         Ingresa tu correo para recuperar contraseña
       </Text>
-      <TextInput
-        style={styles.input}
+      <ThemedInput
+        type='inputLogin'
         placeholder="Correo electrónico"
         placeholderTextColor="#999"
         keyboardType="email-address"
@@ -28,17 +29,11 @@ export default function RecuperacionScreen() {
       <Pressable style={styles.button}>
         <ThemedText type="buttonText">Enviar</ThemedText>
       </Pressable>
-    </View>
+    </ThemedContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.palette.azulMedio,
-    padding: 20,
-    paddingTop: 80,
-  },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -47,12 +42,6 @@ const styles = StyleSheet.create({
   instructions: {
     fontSize: 16,
     color: '#000',
-    marginBottom: 20,
-  },
-  input: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    padding: 12,
     marginBottom: 20,
   },
   button: {

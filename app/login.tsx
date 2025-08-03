@@ -1,8 +1,10 @@
+import { ThemedContainer } from '@/components/ThemedContainer';
+import { ThemedInput } from '@/components/ThemedInput';
 import { ThemedText } from '@/components/ThemedText';
 import { Colors } from '@/constants/Colors';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text } from 'react-native';
 
 export default function LoginScreen() {
   const [usuario, setUsuario] = useState('');
@@ -18,17 +20,17 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <ThemedContainer type='containerLogin'>
       <ThemedText type="title">Iniciar sesión</ThemedText>
-      <TextInput
-        style={styles.input}
+      <ThemedInput
+        type='inputLogin'
         placeholder="Usuario"
         placeholderTextColor="#999"
         onChangeText={setUsuario}
         autoCapitalize="none"
       />
-      <TextInput
-        style={styles.input}
+      <ThemedInput
+        type='inputLogin'
         placeholder="Contraseña"
         placeholderTextColor="#999"
         onChangeText={setContrasena}
@@ -43,43 +45,22 @@ export default function LoginScreen() {
         <ThemedText type="buttonText">Iniciar sesion</ThemedText>
       </Pressable>
 
-      <View style={styles.registerContainer}>
+      <ThemedContainer type='containerLoginRegister'>
         <Text style={styles.registerText}>¿No tienes cuenta? </Text>
         <Pressable onPress={() => router.push('/registro')}>
           <Text style={styles.registerLink}>Crea una</Text>
         </Pressable>
-      </View>
-    </View>
+      </ThemedContainer>
+    </ThemedContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    padding: 20,
-    paddingTop: 80,
-    backgroundColor: Colors.palette.azulMedio,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: Colors.palette.rosaClaro,
-    backgroundColor: '#fff',
-    padding: 12,
-    borderRadius: 8,
-    marginBottom: 16,
-    color: Colors.light.text,
-  },
   button: {
     backgroundColor: Colors.palette.azulClaro,
     padding: 14,
     borderRadius: 8,
     alignItems: 'center',
-  },
-  registerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 20,
   },
   registerText: {
     color: '#000',
