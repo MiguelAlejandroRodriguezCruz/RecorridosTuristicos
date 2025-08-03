@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     padding: 20,
+    paddingTop: 80,
     backgroundColor: Colors.palette.azulMedio,
   },
   input: {
