@@ -22,7 +22,7 @@ export default function RegistroScreen() {
       <TextInput style={styles.input} placeholder="Confirmar contraseña" placeholderTextColor="#999" secureTextEntry />
 
       <Pressable style={styles.button}>
-        <Text style={styles.buttonText}>Crear cuenta</Text>
+        <ThemedText type="buttonText">Crear cuenta</ThemedText>
       </Pressable>
     </View>
   );
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 70,
     marginBottom: 30,
   },
   input: {
@@ -53,9 +53,5 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     marginTop: 10,
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
   },
 });

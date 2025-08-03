@@ -36,11 +36,11 @@ export default function LoginScreen() {
       />
 
       <Pressable onPress={() => router.push('/recuperacion')}>
-        <Text style={styles.link}>¿Olvidaste tu contraseña?</Text>
+        <ThemedText type="link">¿Olvidaste tu contraseña?</ThemedText>
       </Pressable>
 
       <Pressable style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Ingresar</Text>
+        <ThemedText type="buttonText">Iniciar sesion</ThemedText>
       </Pressable>
 
       <View style={styles.registerContainer}>
@@ -56,7 +56,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     padding: 20,
     backgroundColor: Colors.palette.azulMedio,
   },
@@ -69,21 +69,11 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     color: Colors.light.text,
   },
-  link: {
-    color: '#fff',
-    marginBottom: 16,
-    textAlign: 'right',
-    textDecorationLine: 'underline',
-  },
   button: {
     backgroundColor: Colors.palette.azulClaro,
     padding: 14,
     borderRadius: 8,
     alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
   },
   registerContainer: {
     flexDirection: 'row',
@@ -91,10 +81,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   registerText: {
-    color: '#fff',
+    color: '#000',
   },
   registerLink: {
-    color: '#fff',
+    color: '#000',
     fontWeight: 'bold',
     textDecorationLine: 'underline',
   },

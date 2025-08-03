@@ -26,7 +26,7 @@ export default function RecuperacionScreen() {
         keyboardType="email-address"
       />
       <Pressable style={styles.button}>
-        <Text style={styles.buttonText}>Enviar</Text>
+        <ThemedText type="buttonText">Enviar</ThemedText>
       </Pressable>
     </View>
   );
@@ -42,12 +42,11 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
     marginBottom: 30,
   },
   instructions: {
     fontSize: 16,
-    color: '#fff',
+    color: '#000',
     marginBottom: 20,
   },
   input: {
@@ -61,9 +60,5 @@ const styles = StyleSheet.create({
     padding: 14,
     borderRadius: 8,
     alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
   },
 });
