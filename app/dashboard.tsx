@@ -1,11 +1,18 @@
 import { Colors } from '@/constants/Colors';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { abrirUnity } from './abrirUnity';
+
 
 export default function DashboardScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Bienvenido usuario</Text>
+      <Button
+        title="Abrir mapa interactivo"
+        onPress={() => abrirUnity({ lat: 22.7725, lng: -102.5722 })}
+      />
     </View>
+    
   );
 }
 
